@@ -8,5 +8,6 @@ Makefile.PL
 README
 dist.ini
 lib/HEP/Names/LaTeX.pm
+t/00-particle_to_latex.t
 t/release-pod-coverage.t
 t/release-pod-syntax.t
