@@ -33,18 +33,19 @@ sub particle_to_latex
 {
 	return '' unless @_;
 
-	foreach my $name ( @_ ) {
-		my $orig = $name;
+	# in case of string literal in argument, we cannot modify @_!
+	my @names = @_;
+	foreach my $name ( @names ) {
 
 		my ( $charge, $has_apo ) = ( '', '' );
 		# this probably should be done better :)
 		my $is_anti = $name =~ s/^anti-//;
 		# charge is at last position (plus *)
 		$charge = $1 if $name =~ s/(\**[0+-]+$)//;
-		$has_apo = $name =~ s/'//;
+		$has_apo = $1 if $name =~ s/('+)//;
 		my $subscript = $1 if $name =~ s/_(.*)$//;
 
-		my $total_charge = $has_apo ? '\''.$charge : $charge;
+		my $total_charge = $has_apo.$charge;
 		#$total_charge = undef unless length( $total_charge )
 
 		# escape greek names
@@ -57,7 +58,7 @@ sub particle_to_latex
 		$name = "\$".$name."\$";
 	}
 
-	return @_;
+	return wantarray ? @names : $names[0];
 }
 
 
