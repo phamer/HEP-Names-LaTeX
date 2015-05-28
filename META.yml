@@ -12,6 +12,8 @@ meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: '1.4'
 name: HEP-Names-LaTeX
+requires:
+  perl: '5.006'
 resources:
   bugtracker: https://github.com/ponzellus/HEP-Names-LaTeX/issues
   homepage: https://github.com/ponzellus/HEP-Names-LaTeX

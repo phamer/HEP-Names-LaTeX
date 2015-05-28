@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-
+use 5.006;
 
 use ExtUtils::MakeMaker;
 
@@ -15,6 +15,7 @@ my %WriteMakefileArgs = (
   "DISTNAME" => "HEP-Names-LaTeX",
   "EXE_FILES" => [],
   "LICENSE" => "perl",
+  "MIN_PERL_VERSION" => "5.006",
   "NAME" => "HEP::Names::LaTeX",
   "PREREQ_PM" => {},
   "VERSION" => "0.01",
