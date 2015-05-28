@@ -3,18 +3,18 @@ use warnings;
 
 package HEP::Names::LaTeX;
 
-# ABSTRACT: formats particle names as used in eg L<HEP::MCNS> to LaTeX
+# ABSTRACT: formats plain names of high energy physics (HEP) particles to LaTeX
 
 =head1 SYNOPSIS
 
-	use HEP::Names::LaTeX qw( hepname_to_latex );
+	use HEP::Names::LaTeX qw( particle_to_latex );
 	use HEP::MCNS qw( particle_name );
-	my $bplus_name_latex = hepname_to_latex( $bplus_name );
-	my $bzero_name_latex = hepname_to_latex( particle_name( 511 ) );
+	my $bplus_name_latex = particle_to_latex( $bplus_name );
+	my $bzero_name_latex = particle_to_latex( particle_name( 511 ) );
 
 =head1 DESCRIPTION
 
-Converts particle names, eg as produced in L<HEP::MCNS> to LaTeX.
+Converts plain HEP particle names to nice LaTeX format.
 For now only one raw particle name format is implemented, namely that of L<HEP::MCNS>.
 
 =cut
