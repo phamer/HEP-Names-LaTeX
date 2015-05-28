@@ -21,15 +21,15 @@ For now only one raw particle name format is implemented, namely that of L<HEP::
 
 use Exporter qw( import );
 
-our @EXPORT = qw( hepname_to_latex );
+our @EXPORT = qw( particle_to_latex );
 
-=func hepname_to_latex
+=func particle_to_latex
 
 takes particle names and formats to LaTeX
 
 =cut
 
-sub hepname_to_latex
+sub particle_to_latex
 {
 	return '' unless @_;
 
