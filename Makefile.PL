@@ -7,7 +7,7 @@ use warnings;
 use ExtUtils::MakeMaker;
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "formats particle names as used in eg L<HEP::MCNS> to LaTeX",
+  "ABSTRACT" => "formats plain names of high energy physics (HEP) particles to LaTeX",
   "AUTHOR" => "Philipp Hamer <philha\@cpan.org>",
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0

@@ -1,5 +1,5 @@
 ---
-abstract: 'formats particle names as used in eg L<HEP::MCNS> to LaTeX'
+abstract: 'formats plain names of high energy physics (HEP) particles to LaTeX'
 author:
   - 'Philipp Hamer <philha@cpan.org>'
 build_requires: {}

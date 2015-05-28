@@ -3,15 +3,15 @@ use warnings;
 
 package HEP::Names::LaTeX;
 $HEP::Names::LaTeX::VERSION = '0.01';
-# ABSTRACT: formats particle names as used in eg L<HEP::MCNS> to LaTeX
+# ABSTRACT: formats plain names of high energy physics (HEP) particles to LaTeX
 
 
 use Exporter qw( import );
 
-our @EXPORT = qw( hepname_to_latex );
+our @EXPORT = qw( particle_to_latex );
 
 
-sub hepname_to_latex
+sub particle_to_latex
 {
 	return '' unless @_;
 
@@ -53,7 +53,7 @@ __END__
 
 =head1 NAME
 
-HEP::Names::LaTeX - formats particle names as used in eg L<HEP::MCNS> to LaTeX
+HEP::Names::LaTeX - formats plain names of high energy physics (HEP) particles to LaTeX
 
 =head1 VERSION
 
@@ -61,19 +61,19 @@ version 0.01
 
 =head1 SYNOPSIS
 
-	use HEP::Names::LaTeX qw( hepname_to_latex );
+	use HEP::Names::LaTeX qw( particle_to_latex );
 	use HEP::MCNS qw( particle_name );
-	my $bplus_name_latex = hepname_to_latex( $bplus_name );
-	my $bzero_name_latex = hepname_to_latex( particle_name( 511 ) );
+	my $bplus_name_latex = particle_to_latex( $bplus_name );
+	my $bzero_name_latex = particle_to_latex( particle_name( 511 ) );
 
 =head1 DESCRIPTION
 
-Converts particle names, eg as produced in L<HEP::MCNS> to LaTeX.
+Converts plain HEP particle names to nice LaTeX format.
 For now only one raw particle name format is implemented, namely that of L<HEP::MCNS>.
 
 =head1 FUNCTIONS
 
-=head2 hepname_to_latex
+=head2 particle_to_latex
 
 takes particle names and formats to LaTeX
 
