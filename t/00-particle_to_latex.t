@@ -1,4 +1,4 @@
-use Test::More tests => 9;
+use Test::More tests => 10;
 
 use HEP::Names::LaTeX 'particle_to_latex';
 
@@ -29,6 +29,9 @@ is( particle_to_latex( "anti-K'_10" ), q($\bar{K}_{1}^{'0}$), "anti-K'_10" );
 
 # with 2 ' and charge
 is( particle_to_latex( "K''*0" ), q($K^{''*0}$), "K''*0" );
+
+# subscript escape
+is( particle_to_latex( "nu_mu" ), q($\nu_{\mu}$), 'subscript escape' );
 
 # array return
 is_deeply [ particle_to_latex( 'B-', 'e+', 'rho-' ) ], [ q($B^{-}$), q($e^{+}$), q($\rho^{-}$) ], 'list-context';

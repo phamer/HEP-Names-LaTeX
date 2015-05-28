@@ -11,6 +11,8 @@ use Exporter qw( import );
 our @EXPORT = qw( particle_to_latex );
 
 
+my $names_to_escape = qr(psi|upsilon|gamma|tau|rho|pi|mu|eta|nu|omega);
+
 sub particle_to_latex
 {
 	return '' unless @_;
@@ -31,7 +33,8 @@ sub particle_to_latex
 		#$total_charge = undef unless length( $total_charge )
 
 		# escape greek names
-		$name =~ s/(psi|upsilon|gamma|tau|rho|pi|mu|eta|nu|omega)/\\$1/gi;
+		$name =~ s/($names_to_escape)/\\$1/gi;
+		$subscript =~ s/($names_to_escape)/\\$1/gi if $subscript;
 
 		# ad put it together
 		$name = "\\bar{$name}" if $is_anti;
